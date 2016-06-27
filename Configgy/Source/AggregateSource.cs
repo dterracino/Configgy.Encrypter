@@ -74,8 +74,7 @@ namespace Configgy.Source
         {
             return _sources
                 .Select(s => s.GetRawValue(valueName, property))
-                .Where(v => !string.IsNullOrEmpty(v))
-                .FirstOrDefault();
+                .FirstOrDefault(v => !string.IsNullOrEmpty(v));
         }
     }
 }
